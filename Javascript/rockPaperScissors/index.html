@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>rockPaperScissors</title>
+</head>
+<body>
+	
+</body>
+<script>
+	const getUserChoice = userInput => {
+		userInput = userInput.toLowerCase();
+
+		if (userInput == 'rock' || userInput == 'paper' || userInput == 'scissors') {
+			console.log(userInput);
+		} else {
+			console.log("error!")
+		}
+	}
+
+	function getComputerChoice() {
+		var encode = Math.floor(Math.random() *3)
+
+		if (encode == 0) {
+			console.log('rock')
+		} else if (encode == 1) {
+			console.log('paper') 
+		} else if (encode == 2) {
+			console.log('scissors')
+		}
+	} // function closing bracket
+
+	function determineWinner(userChoice, computerChoice) {
+		if (userChoice == computerChoice) {
+			return "was a tie";
+		}
+	}
+</script>
+</html>
