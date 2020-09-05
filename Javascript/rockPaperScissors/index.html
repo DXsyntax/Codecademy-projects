@@ -8,6 +8,10 @@
 	
 </body>
 <script>
+
+
+
+
 	const getUserChoice = userInput => {
 		userInput = userInput.toLowerCase();
 
@@ -30,8 +34,8 @@
 		}
 	} // function closing bracket
 
-var userChoice;
-var computerChoice;
+// var userChoice;
+// var computerChoice;
 
 	function determineWinner(userChoice , computerChoice) {
 		if (userChoice == computerChoice) {
@@ -56,5 +60,19 @@ var computerChoice;
 			} // if userChoice is scissors and Comp is not rock
 		} // userChoice is scissors 
 	} // end bracket function
+
+var options = ['rock', 'paper', 'scissors'];
+
+var randomizer = Math.floor(Math.random() * options.length)
+
+
+	function playGame() {
+		var userChoice = getUserChoice(options[randomizer]);
+		var computerChoice = getComputerChoice();
+		console.log(userChoice);
+		console.log(computerChoice);
+
+		console.log(determineWinner(userChoice, computerChoice))
+	}
 </script>
 </html>
