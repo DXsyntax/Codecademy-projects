@@ -30,7 +30,24 @@
 
 
 
-	// how am i able to use this.id and it maps directly to userInput as well? 
+
+
+	function getComputerChoice() {
+		var encode = Math.floor(Math.random() *3);
+
+		if (encode == 0) {
+			// console.log('rock')
+			document.getElementById("computer-attack-display").innerHTML = 'rock';
+		} else if (encode == 1) {
+			// console.log('paper') 
+			document.getElementById("computer-attack-display").innerHTML = 'paper';
+		} else if (encode == 2) {
+			// console.log('scissors')
+			document.getElementById("computer-attack-display").innerHTML = 'scissors';
+		}
+	} // function closing bracket
+
+// how am i able to use this.id and it maps directly to userInput as well? 
 	// find out.
 	const getUserChoice = userInput => {
 		userInput = userInput.toLowerCase();
@@ -41,19 +58,10 @@
 		} else {
 			console.log("error!")
 		}
+		getComputerChoice()
 	}
 
-	function getComputerChoice() {
-		var encode = Math.floor(Math.random() *3)
 
-		if (encode == 0) {
-			console.log('rock')
-		} else if (encode == 1) {
-			console.log('paper') 
-		} else if (encode == 2) {
-			console.log('scissors')
-		}
-	} // function closing bracket
 
 // var userChoice;
 // var computerChoice;
