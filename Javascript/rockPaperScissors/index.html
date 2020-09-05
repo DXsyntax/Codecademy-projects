@@ -30,10 +30,31 @@
 		}
 	} // function closing bracket
 
-	function determineWinner(userChoice, computerChoice) {
+var userChoice;
+var computerChoice;
+
+	function determineWinner(userChoice , computerChoice) {
 		if (userChoice == computerChoice) {
 			return "was a tie";
-		}
-	}
+		} else if ( userChoice == 'rock') { // if user is 'rock
+			if (computerChoice == 'paper') {
+				return "computer won!";
+			} else { // if comp is paper what happens
+				return "player won!";
+			} 
+		} else if (userChoice == 'paper') {
+			if (computerChoice == 'scissors') {
+				return "computer won!";
+			} else {
+				return "player won!";
+			}
+		} else if (userChoice == 'scissors') {
+			if (computerChoice == 'rock') {
+				return "computer won!";
+			} else {
+				return "player won!";
+			} // if userChoice is scissors and Comp is not rock
+		} // userChoice is scissors 
+	} // end bracket function
 </script>
 </html>
