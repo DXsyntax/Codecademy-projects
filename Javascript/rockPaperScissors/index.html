@@ -25,11 +25,15 @@
 	<h1 id="human-attack-display">OPTION OF ATTACK HERE.</h1>
 	<h1 id="computer-attack-display">OPTION OF ATTACK HERE.</h1>
 </div>
+
+<div id="status" style="display: flex; justify-content: center; position: relative; bottom: 77px;">
+	display results here.
+</div>
 </body>
 <script>
 
 
-
+var compChoice;
 
 
 	function getComputerChoice() {
@@ -37,15 +41,39 @@
 
 		if (encode == 0) {
 			// console.log('rock')
-			document.getElementById("computer-attack-display").innerHTML = 'rock';
+			compChoice = document.getElementById("computer-attack-display").innerHTML = 'rock';
 		} else if (encode == 1) {
 			// console.log('paper') 
-			document.getElementById("computer-attack-display").innerHTML = 'paper';
+			compChoice =document.getElementById("computer-attack-display").innerHTML = 'paper';
 		} else if (encode == 2) {
 			// console.log('scissors')
-			document.getElementById("computer-attack-display").innerHTML = 'scissors';
+			compChoice =document.getElementById("computer-attack-display").innerHTML = 'scissors';
 		}
 	} // function closing bracket
+
+function determineWinner(userChoice , computerChoice) {
+		if (userChoice == computerChoice) {
+			document.getElementById("status").innerHTML =  "was a tie";
+		} else if ( userChoice == 'rock') { // if user is 'rock
+			if (computerChoice == 'paper') {
+				document.getElementById("status").innerHTML = "computer won!";
+			} else { // if comp is paper what happens
+				document.getElementById("status").innerHTML = "player won!";
+			} 
+		} else if (userChoice == 'paper') {
+			if (computerChoice == 'scissors') {
+				document.getElementById("status").innerHTML = "computer won!";
+			} else {
+				document.getElementById("status").innerHTML = "player won!";
+			}
+		} else if (userChoice == 'scissors') {
+			if (computerChoice == 'rock') {
+				document.getElementById("status").innerHTML = "computer won!";
+			} else {
+				document.getElementById("status").innerHTML = "player won!";
+			} // if userChoice is scissors and Comp is not rock
+		} // userChoice is scissors 
+	} // end bracket function
 
 // how am i able to use this.id and it maps directly to userInput as well? 
 	// find out.
@@ -58,7 +86,8 @@
 		} else {
 			console.log("error!")
 		}
-		getComputerChoice()
+		getComputerChoice();
+		determineWinner(userInput, compChoice);
 	}
 
 
@@ -66,29 +95,7 @@
 // var userChoice;
 // var computerChoice;
 
-	function determineWinner(userChoice , computerChoice) {
-		if (userChoice == computerChoice) {
-			return "was a tie";
-		} else if ( userChoice == 'rock') { // if user is 'rock
-			if (computerChoice == 'paper') {
-				return "computer won!";
-			} else { // if comp is paper what happens
-				return "player won!";
-			} 
-		} else if (userChoice == 'paper') {
-			if (computerChoice == 'scissors') {
-				return "computer won!";
-			} else {
-				return "player won!";
-			}
-		} else if (userChoice == 'scissors') {
-			if (computerChoice == 'rock') {
-				return "computer won!";
-			} else {
-				return "player won!";
-			} // if userChoice is scissors and Comp is not rock
-		} // userChoice is scissors 
-	} // end bracket function
+	
 
 var options = ['rock', 'paper', 'scissors'];
 
