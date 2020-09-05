@@ -3,6 +3,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>rockPaperScissors</title>
+
+	<link rel="stylesheet" href="style.css">
 </head>
 <body >
 	<div class="header" style=" text-align: center;">
@@ -10,14 +12,19 @@
 		<h2>- javascript edition - </h2>
 	</div>
 
-	<h1>HUMANS</h1> <h1 style="display: flex; justify-content: flex-end;">COMPUTERS</h1>
+<div class="players" style="display: flex; justify-content: space-between;">
+	<h1>HUMANS</h1> <h1>COMPUTERS</h1>
+</div>
+
 
 	<button id="rock" onclick="getUserChoice(this.id)">ROCK</button>
 	<button id="paper" onclick="getUserChoice(this.id)">PAPER</button>
 	<button id="scissors" onclick="getUserChoice(this.id)">SCISSORS</button>
 
-	<h1 id="attack-display">OPTION OF ATTACK HERE.</h1>
-
+<div class="arena" style="display: flex; justify-content: space-between;">
+	<h1 id="human-attack-display">OPTION OF ATTACK HERE.</h1>
+	<h1 id="computer-attack-display">OPTION OF ATTACK HERE.</h1>
+</div>
 </body>
 <script>
 
@@ -30,7 +37,7 @@
 
 		if (userInput == 'rock' || userInput == 'paper' || userInput == 'scissors') {
 			// console.log(userInput);
-			document.getElementById("attack-display").innerHTML = userInput;
+			document.getElementById("human-attack-display").innerHTML = userInput;
 		} else {
 			console.log("error!")
 		}
