@@ -26,14 +26,19 @@
 	<h1 id="computer-attack-display">OPTION OF ATTACK HERE.</h1>
 </div>
 
-<div id="status" style="display: flex; justify-content: center; position: relative; bottom: 77px;">
-	display results here.
+<div id="status" style="display: flex; justify-content: center; position: relative; bottom: 77px; font-size: 20px;">
+	outcome is displayed here. 
+</div>
+<div class="score-card" style="display: flex; justify-content: center; position: relative; bottom: 91px;">
+	<h2 id="humanScore" >0</h2>     <h2 id="computerScore" >0</h2>
 </div>
 </body>
 <script>
 
 
 var compChoice;
+var humanScore;
+var computerScore;
 
 
 	function getComputerChoice() {
