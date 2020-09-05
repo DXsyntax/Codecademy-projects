@@ -4,19 +4,33 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>rockPaperScissors</title>
 </head>
-<body>
-	
+<body >
+	<div class="header" style=" text-align: center;">
+		<h1>ROCK - PAPER - SCISSORS</h1>
+		<h2>- javascript edition - </h2>
+	</div>
+
+	<h1>HUMANS</h1> <h1 style="display: flex; justify-content: flex-end;">COMPUTERS</h1>
+
+	<button id="rock" onclick="getUserChoice(this.id)">ROCK</button>
+	<button id="paper" onclick="getUserChoice(this.id)">PAPER</button>
+	<button id="scissors" onclick="getUserChoice(this.id)">SCISSORS</button>
+
+	<h1 id="attack-display">OPTION OF ATTACK HERE.</h1>
+
 </body>
 <script>
 
 
 
-
+	// how am i able to use this.id and it maps directly to userInput as well? 
+	// find out.
 	const getUserChoice = userInput => {
 		userInput = userInput.toLowerCase();
 
 		if (userInput == 'rock' || userInput == 'paper' || userInput == 'scissors') {
-			console.log(userInput);
+			// console.log(userInput);
+			document.getElementById("attack-display").innerHTML = userInput;
 		} else {
 			console.log("error!")
 		}
